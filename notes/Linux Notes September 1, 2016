@@ -1,0 +1,13 @@
+cat file1
+	concatenates the file to the console (standard out)
+cat file1 file2 file3
+	concatenates all three files to the console (standard out)
+cp file1 file2
+	copies file1 to file2 
+cp file1 file2 file3 file4 directory1
+	copies each of the four files into the directory 
+ln file1 file2
+	makes another hard­link to file1 named file2 
+ln file1 file2 file3 file4 directory1
+	makes hard­links to each of the four files in the directory 	(with names 
+matching the files on the command­line) 

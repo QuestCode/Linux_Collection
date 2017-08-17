@@ -1,0 +1,41 @@
+Devontae Reid 
+September 8, 2016
+
+Text Utilities
+clear - clears the screen
+ls- list of items in directory
+	-l - long listing
+		-r - reverse
+		-t - by time
+	-ltr - will do the top
+	-h - size of the files in bytes (human readable)
+rm - remove file or files
+touch - create an empty file
+more / less - shows a big or smaller list
+
+[mv] - move or rename file based on number of files
+
+[cp] - copy files 
+	if there are more than one file the last one has to be a directory
+grep - find stuff in file
+	nl [File Name] | grep [Word to find]
+		returns line number and matching items
+	grep [item] [FIle Name]
+		returns without number line
+
+head / tail - return first/last ten lines
+	nl [File Name] | head/tail
+
+sort - sort the lines in file
+	sort [File Name] | [Sort prefix]
+
+date - prints the date to the screen
+
+which - let you know which thing you are using
+
+whereis - tells you where the thing you are looking for is located
+
+cat - file input or output
+
+wc - count words in file
+
