@@ -1,0 +1,41 @@
+Shakib Chowdhury, CIS214Lab05-Answers.txt
+
+01. Use the apropos command to get a list of utilities related to "calendar" (as a keyword).  What was the command to accomplish this?
+
+[apropos calendar]
+
+02. Look and the command you typed in step 1 above.  Type it again except replace the apropos utility with the man utility and include the -k option?  What is the difference between apropos and man -k on the keyword:  calendar?
+
+[there is no difference]
+
+03. Create a small file called data with several lines of one word each in your home directory.  Don't place the words in any particular order.  Include at least 10 lines (therefore 10 words).  Use the sort utility with your file, then use the sort utility including the -r option with the same file.  What is the effect of the -r option?
+
+[alphabetizes the file in descending order]
+
+04. Now, devise a command line, possibly making use of a pipe, that would always print out the alphabetically last word in this file (or any other text file consisting of single words on each line).  What is the command that will always accomplish this task correctly?
+
+[sort data | tail -n 1]
+
+05. Modify the above solution to always print the alphabetically first word in the file.  Again, the original file is not already in order - but your command line must always work with any such file.  What is the new command?
+
+[sort data | head -n 1]
+
+06. Use the man utility to help you figure out how to use the cal utility to print a calendar of the (always) current month.  (Note:  Your command should always produce the "current" month, no matter when it is used, by typing the exact same syntax every time.  You should not have to know what month it is to print the current month - let the computer figure it out.)  What is the proper syntax for that command you discovered (the command-line to use)?
+
+[cal -1]
+
+07. Use the man utility to help you figure out how to use the cal utility to print the date of Easter (Western Tradition).  (Note:  Be careful, you might have to experiment a bit to get it to work - the correct syntax isn't immediately obvious from the man page, but you can find it, for sure, at least after a bit of trial-and-error.)  What is the proper syntax for that command you discovered (the command-line to use)?
+
+[cal -e]
+
+08. Go back to your data file and make sure there are some duplicate words in the file (but don't place them together).  Now, devise a command line syntax that will show (list) only the unique words in the file (i.e., without the duplicates).  You can use sort in a pipe to help you accomplish this, but you may not use the -u option (or any other option) with sort.  What is the command that accomplishes this task?  (Hint:  The chapter mentions finding unique lines in a file and how to make it work properly - this demonstrates the Unix Philosophy in action, but the -u option to sort does not.)
+
+[sort data | uniq]
+
+09. What would be the command to rename your data file from data to words?
+
+[mv data words]
+
+10. What would be the command to rename your data file from words to My Data (including the embedded space)?
+
+[mv words "My Data"]

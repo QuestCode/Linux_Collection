@@ -1,0 +1,3 @@
+ ls -l | awk '{print $3, $0}' | sort | sed -e 's/^mint //' -e 's/^part //' -e 's/^user //' 
+
+ ls -l | awk '{print $3, $0}' | sort | awk '{print $2, $3, $4,....$9}'

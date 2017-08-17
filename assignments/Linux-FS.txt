@@ -1,0 +1,57 @@
+Shakib Chowdhury, CIS 214 Linux (logged in as root)
+
+1. Open a shell (go to the command-line) and from your home directory, type a single command to create subdirectories:  Jan, Feb, Mar, and Calendar below your home directory.
+
+Note that by "single command" it is always meant that you must not use pipes or ampersands or semicolons in an attempt to get more than one command on one command-line).  One command with the proper number of arguments will work.
+
+For example:  A single command to list the contents of both file1 and file2 to the console's monitor would be:
+cat file1 file2  -not-  cat file1 | cat file2  (which is wrong for several reasons).  Even though you might think it "works" it doesn't use pipes correctly and is actually two commands on a single line, not a single command.  Indicate the single command on a single line that is the correct solution in the space below:  Hint:  There should be no use of pipes, semi-colons, ampersands, angle-brackets or any other shell special characters.
+
+[mkdir Jan Feb Mar Calendar]
+
+2. Without changing directories, and using a single command, create a file called January that contains a calendar for January 2014 in your Jan subdirectory.  Indicate the command below:
+
+[cal 1 2014 > Jan/January]
+
+3. Change to the Jan directory, and from there, using a single command, create a file called February that contains a calendar for February 2014 in your Feb subdirectory by using a relative path to that new file in your command.  Indicate the command below:
+
+[cal 2 2014 > ../Feb/February]
+
+4. Still in the Jan directory, using a single command, create a file called March that contains a calendar for March 2014 in your Mar subdirectory by using an absolute path to that new file in your command.  Indicate the command below:
+
+[cal 3 2014 > /home/devontae/Desktop/Mar/March]
+
+5. Change back to your home directory and from there, using a single command, create hard links to both the January and February calendar files in the Calendar directory (the new links should appear in the Calendar directory, the originals are in their respective directories that you already created).  Indicate the command below:
+
+[ln Jan/January Feb/February Calendar]
+
+6. Still in your home directory, using a single command, create a soft link to the March calendar file in the Calendar directory.  Indicate the command below:
+
+[ln -s Mar/March Calendar]
+
+7. Now, change the contents of the January file in the Jan directory to contain a calendar for January 2015.  Display the contents of the January link in the Calendar directory.  Which calendar year is displayed by the link in the Calendar directory?
+
+[2015]
+
+8. Delete the January file in the Jan directory.  Does the original January file's data still exist anywhere else (a), and if so, where is it (absolute path) and which calendar (year) does it contain (b)?  (2 points)
+
+      (a, yes or no)
+      [yes]
+      (b, path and year)
+      [/root/Calendar/January and 2015]
+
+9. Delete the March file in the Mar directory.  Does the original March file's data still exist anywhere (a), and if so, where is it (absolute path) and which calendar (year) does it contain (b)?  If 8(a) & 9(a) are different, why, if not, why not (c)?  (3 points)
+
+      (a, yes or no)
+      [no]
+      (b, path and year)
+      []
+      (c, why do or don't the answers to 8(a) and 9(a) match)
+      ["March" was connected to a hard link, so after deleting it the soft link can be displayed but it will not work]
+
+10. At 9:00 PM on September 02, 1752, a young girl went to her girlfriend's birthday party, promising her parents she would be home by 1:00 AM the next day.  She did return home by 1:00 AM, but on September 14th, not September 3rd!  Use the cal utility and its man page documentation to see how long she was gone.  How many hours was she gone (a)?  Explain (b)?  (2 points) (hint: this is easy if you follow the directions)
+
+      (a, how long)
+      [4 hours]
+      (b, explain why)
+      [the Gregorian calendar was adopted in place of the Julian]

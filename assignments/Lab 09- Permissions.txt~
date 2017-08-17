@@ -1,0 +1,18 @@
+Shakib Chowdhury, Lab 09 - Permissions.txt
+Please mark which file operations the various user types can perform by placing an "X" in the associated box on the corresponding row for each user type.  You are to assume that a file with the permissions indicated resides in a directory with the permissions indicated and you check-mark (x-mark) what each user type can do with that file:  (12 points)
+
+      Directory Permissions are:  drwxr-xr-x
+      File Permissions are:       -rwxrwxr--
+     
+      User (owner) can:        Read[X]  Modify[X]  Delete[X]  Execute[X]  the file
+      Group members can:       Read[X]  Modify[X]  Delete[X]  Execute[X]  the file
+      Other users can:         Read[X]  Modify[]   Delete[]   Execute[]   the file
+
+If a file named "myfile" has -r--r--r-- type-permissions listed in a long file listing, write the command to change it to -rwxr-xr-- permissions using both the octal and symbolic modes of the appropriate command (octal mode was included in the instructor's lecture and published on this web site in the resources area, it is not the textbook).  (2 points):
+
+      command in symbolic mode: chmod u+wx,g+x myfile
+      command in octal mode: chmod 754 myfile
+
+Write the (one, single) command that will change your shell environment such that new regular files you create will have permissions -rw-rw-r-- by default, and new directories you create will have permissions drwxrwxr-x by default:  (1 point)
+
+      command: umask 002

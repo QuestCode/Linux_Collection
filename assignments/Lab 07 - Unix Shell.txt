@@ -1,0 +1,41 @@
+Shakib Chowdhury, Lab 07 - Unix Shell.txt
+1. What is the name of the action the shell performs on your command-line after you hit the ENTER key (i.e., to cut your command-line syntax into its constituent tokens, including its commands, options and arguments)?
+Hint:  It is a word that begins with a “p”  and was mentioned in the textbook...
+[parsing]
+
+2. What is the name of the important shell variable that is used to find where the command you entered might be stored in the file system, allowing you to make changes to these locations as needed (i.e., to add your own, personal ~/bin directory to the search list)?
+Hint:  It is a word that begins with a “P” and was mentioned in the textbook...
+[PATH]
+
+3. Figure out what the following sequence of commands is trying to accomplish - that is, the end result - and write a single command-line syntax to achieve the same result, using sort as a filter (i.e., don't use sort as the first command), and without creating any new files at all (that is, other than the one that already existed before you started your command-line, and that serves as the input in this example).  Do not create and then delete files in your solution.  Type your command-line solution:
+Hint:  Do not use any temp files...
+
+         $ sort list > temp
+         $ lpr temp
+         $ rm temp
+
+[cat list | sort | lpr]
+
+In questions 4-7, use regular expressions with wild-card characters (i.e., shell expansion file name generation with wild cards) to write the shortest possible single command-lines to perform the indicated tasks regardless of what files may or may not actually be in your working directory.  Be sure your command would always provide the desired results on any system with any possible file names already present.  Answers that are too long or too short may not work correctly.  Make you answers as short as possible while guaranteeing that they always work properly in all environments.
+
+4. The command to list (ls) all file names in your logged directory beginning with "section" (quotes not included):
+[ls section*]
+
+5. The command to list only files named section1, section2 and section3 to the console (shortest solution):
+[ls section[123]]
+
+6. The command to list all files that contain the letter "r" anywhere in their name:
+[ls *r*]
+
+7. The command to list only files named section1, section3, ref1 and ref3 (remember, shortest possible single command):
+[ls section[13] ref [13]]
+
+8. Write the shortest possible command to sort a file named "list" saving the results in a file named "sorted-list" (this time, do not use sort as a filter, use it as the first and only command):
+[sort list > sorted-list]
+
+9. Write the shortest possible command to create a file named "book" by combining the files named "ch1" and "ch2" and “ch3” and “ch4” and “ch5” (only).  Hint:  Use a proper "character class" (i.e., the "[ ]" syntax) in the command-line:
+[cat ch[1-5] > book]
+
+10. Now let's see if you still remember the material from the earlier chapters and can combine them with the concepts from this current chapter...  Use the "uniq" command without any options to list only the unique lines (i.e., none of the duplicates) in the file named "transactions" to the console.  Remember (or look up, if you need to) how the utility you will use actually works.  It might require the file to be pre-processed so as to first be arranged in a certain way in order to work properly.  If so (and it does) build the proper command-line syntax to pre-arrange this file and pass the results to "uniq" so that the output displays only one copy of each (unique) line in the file named "transactions" to the console.  Of course you have no idea how the data is organized in the file - and you don't need to know.  Do not create any temporary files and type only a single command-line syntax (and remember, no options for the uniq command itself, or for any other commands you might use in the pipe, for that matter).  Hint:  You may have to use uniq as a filter.
+[sort transactions | uniq]
+

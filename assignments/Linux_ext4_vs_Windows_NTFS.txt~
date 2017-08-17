@@ -1,0 +1,7 @@
+Shakib Chowdhury, Linux_ext4_vs_Windows_NTFS.txt
+
+1.  Characters not allowed in Linux ext4
+    NUL and /
+
+2.  Characters not allowed in Windows NTFS
+    NUL, \, /, :, *, ?, ", <, >, and |
