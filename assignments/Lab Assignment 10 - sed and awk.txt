@@ -1,0 +1,34 @@
+Devontae Reid
+
+LAB ASSIGNMENT 10 - sed and awk
+
+1.  Type a single sed command-line that will remove all leading spaces (and only leading spaces) from each line in the file "book-with-margin" and store the results in the file "book-without-margin".  You don't know exactly how many leading spaces there may be on each line:
+
+[ sed 's/^ *//' book-­with­-margin > book-­without-­margin ]
+
+2.  In a [ ps -ef ] listing, all processes currently running on the system are reported, one per line.  Most of the system processes (as opposed the user processes) are either owned by the "root" user (as indicated in the output) or are daemons (and don't indicate any associated TTY device in the output... reporting only "?" in place of a valid device name).  Type a single command-line, piping the output of ps (with the -ef options) through sed to filter out any lines either beginning with "root" or containing a " ? " (question mark surrounded by spaces).  This will show all the processes owned by regular (logged in) users.  Note that the pattern "root" must only be detected at the beginning of a line and the question mark must not a substring of a longer token (it is a single-character column).  We don't want to delete lines that have other valid appearances of the pattern "root" (in other positions) or the question mark, for instance as used in URLs, etc.):
+
+[ ps -­ef | sed -­e '/^root/d' ­-e '/ ? /d' ]
+
+3.  Type a sed command-line that will show only the lines in the file "BK" that begin with the word "Zossima" but without displaying that word in the actual output (i.e, sed should delete that word from the beginning of those lines before actually printing them).  The result is that only the lines that had originally contained "Zossima" at their beginning are output, but only displaying the remainder of those lines in the output (not the leading "Zossima" that was originally there).  Don't delete the entire line or show any other lines in the output:
+
+[ sed -­n 's/^Zossima//p' BK ]
+
+4.  Type an awk command-line that will display only the owner and name of every file in the current working directory (hint: owner is the 3rd and name is the 9th column in a long listing).  Be sure to include the syntax that generates the file listing in your single line pipe:
+
+[ ls ­-l | awk '{print $3, $9}’ ]
+
+5.  Suppose that -l was the only option available for the ls utility and that the sort utility had no options available at all.  Consider generating a long listing sorted by owner (3rd column).  Type a single command-line that includes sed and/or awk to produce a long listing, sorted by owner, without changing the formatting of the ls -l output (that is, "fed" by an "ls -l" command-line pipe).  Don't use any options other than "-l" to the "ls" command and none at all for the sort command.
+
+BIG HINT:
+
+To do this, first process the long listing of the current working directory so that the owner of each file (column 3) is duplicated at the front of each line (being careful to do this in such a way that you can remove it again, later in the pipe).  Further, pipe these results to a process to delete the first line (the header) of the listing, sort the results (which will be sorted by owner as you duplicated that column at the front of each line), and finally, remove the owner column (that you previously added to the front of each line).
+
+ANOTHER HINT:
+
+You can assume that all user names consist only of lower-case letters, but you don't know their individual widths).  Your final result will be a long listing sorted by owner.  Be sure not to somehow end up with any extra space at the front of each line (the original ls -l listing did not contain any leading spaces)!  What you end up with should look EXACTLY like the ORIGINAL long listing, except sorted by owner.  Make sure the column widths and justifications are not damaged (don't produce ragged columns, and you can't assume that all data in every column will just happen to have the same width... for example, the owner names could be of different lengths - I mention this so that you can make sure that what works for you will also work for me).
+
+You might have to make some fake data with different owners in the 3rd column to practice with before you report your final solution.  Make sure your final output doesn't look like it has been re-formatted (the columns should all line up properly, as in the original).
+
+[ ls ­-l | awk '{print $3, $0}' | sed '1d' | sort | sed 's/^[a­-z]* //' ]
+

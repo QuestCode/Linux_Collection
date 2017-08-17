@@ -1,0 +1,51 @@
+
+1. Type a single command to create subdirectories:  Jan, Feb, Mar, and Calendar below your home directory.  Indicate the single command in the space below:  Hint:
+
+[ mkdir Jan Feb Mar Calendar ]
+
+2. Without changing directories, create a file called January that contains a calendar for January 2015 in your Jan subdirectory.  Indicate the command below:
+
+[ cal 1 2015 > Jan/January ]
+
+3. Change to the Jan directory, and from there, create a file called February that contains a calendar for February 2015 in your Feb subdirectory by using a relative path to that new file in your command.  Indicate the command below:
+
+[ cal 2 2015 > ../Feb/Febuary ]
+
+4. Still in the Jan directory, create a file called March that contains a calendar for March 2015 in your Mar subdirectory by using an absolute path to that new file in your command.  Indicate the command below:
+
+[ cal 3 2015 > /home/devontae/Desktop/Mar/March ]
+
+5. Change back to your home directory and from there, create hard links to both the January and February calendar files in the Calendar directory.  Indicate the command below:
+
+[ ln Jan/January Feb/Febuary Calendar ]
+
+6. Still in your home directory, create a soft link to the March calendar file in the Calendar directory.  Indicate the command below:
+
+[  ln -s Mar/March Calendar ]
+
+7. Now, change the contents of the January file in the Jan directory to contain a calendar for January 2016.  Display the contents of the January link in the Calendar directory.  Which calendar year is displayed by the link in the Calendar directory?
+
+[ 2016 ]
+
+8. Delete the January file in the Jan directory.  Does the original January file's data still exist anywhere else (a), and if so, where is it (absolute path) and which calendar (year) does it contain (b)?  (2 points)
+
+      (a, yes or no)
+      [ yes ]
+      (b, path and year)
+      [ /home/devontae/Desktop/Calendar/Cal and 2016  ]
+
+9. Delete the March file in the Mar directory.  Does the original March file's data still exist anywhere (a), and if so, where is it (absolute path) and which calendar (year) does it contain (b)?  If 8(a) & 9(a) are different, why, if not, why not (c)?  (3 points)
+
+      (a, yes or no)
+      [ no  ]
+      (b, path and year)
+      [   ]
+      (c, why do or don't the answers to 8(a) and 9(a) match)
+      [ 8(a) is hard link & 9(a) is soft link to the original file  ]
+
+10. At 9:00 PM on September 02, 1752, a young girl went to her girlfriend's birthday party, promising her parents she would be home by 1:00 AM the next day.  She did return home by 1:00 AM, but on September 14th, not September 3rd!  Use the cal utility and its man page documentation to see how long she was gone.  How many hours was she gone (a)?  Explain (b)?  (2 points) (hint: this is easy if you follow the directions)
+
+      (a, how long)
+      [ 4 hours  ]
+      (b, explain why)
+      [ This is the date when they switch from Julian calendar to Gregorian calendar ]

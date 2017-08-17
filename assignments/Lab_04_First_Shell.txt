@@ -1,0 +1,40 @@
+Devontae Reid
+09/01/16
+Lab_04-First_Shell.txt
+
+1. lsb_release -d (results)
+
+[Description:	Ubuntu 16.04 LTS]
+
+2. lsb_release (codename)
+[lsb_release -c]
+
+3. uname -i (results)
+[x86_64]
+
+4. uname (kernel release)
+uname -r
+
+[4.4.0-36-generic]
+
+5. pwd (results)
+
+[/home/devontae]
+
+6. stat Lab_04_First_Shell.txt (modification time)
+
+[Modify: 2016-09-01 19:03:34.000000000 -0700]
+
+7. file Lab_04_First_Shell.txt (results)
+
+[Lab_04_First_Shell.txt: ASCII text, with CRLF line terminators]
+
+8. file /usr/bin/lsb_release (results)
+
+[/usr/bin/lsb_release: Python script, ASCII text executable]
+
+9. file /bin/uname (results)
+[/bin/uname: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=6bbea8eb40b08fa09528feaff5c911096f650acc, stripped]
+
+10. What command did you use to logout (answer)?
+[[cmd] + d]

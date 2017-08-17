@@ -1,0 +1,42 @@
+Deovntae Reid, CIS214Lab05-Answers.txt
+
+01. Use apropos for "calendar" (as a keyword).  What was the command to accomplish this?
+
+[ apropos calendar ]
+
+02. Replace apropos in the above with man and the -k option?  What is the difference in the output?
+
+[ There isn't a difference. ]
+
+03. What is the effect of the -r option on the sort utility?
+
+[ reverse the result of comparisons ]
+
+04. What is the full command line to print only the alphabetically last word from a file of words named data that contains one word per line?
+
+[ sort a | tail -n 1 ]
+
+05. What is the full command line to print only the alphabetically first word from a file of words named data that contains one word per line?
+
+[ sort a | head -n 1 ]
+
+06. What is the complete command to print a calendar of the current month (note: the same command must work no matter what month it is when the command is run)?
+
+[ cal - 1 ]
+
+07. What is the complete cal or cal-like command to print the date of Easter (western) of the current year at the terminal?
+
+[ cal -e ]
+
+08. What full command would print only the unique words in a file of words named list.txt (i.e., ignoring the duplicates)?  Assume the file has one word per line but is in no particular order.  You command or command-line sequence must not use any command options.
+
+[ sort list.txt | uniq ]
+
+09. What command renames file data to words?  Note: extensions are never implied in Unix or Linux so don't add them if they're not requested.
+
+[ mv data words ]
+
+10. What command could rename file words to My Data (including the embedded space)?
+
+[ mv words My\ Data ]
+
